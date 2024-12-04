@@ -701,12 +701,30 @@ footer .copyright .social .fa-linkedin-in:hover {
 /* Applying animation to the paragraph */
 .animate-paragraph {
     animation: fadeInUp 1.5s ease-out;
-}
-
-/* Optionally, add some delay for a more staged effect */
-.animate-paragraph {
     animation-delay: 0.5s;
 }
+
+/* Optional: Staggered delay for multiple paragraphs */
+.animate-paragraph:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.animate-paragraph:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+/* Fade-in and slide-up effect */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .contact-links {
     background-color: #f9f9f9;
@@ -1297,3 +1315,50 @@ button[type="submit"]:hover {
     font-size: 18px;
     z-index: 1000;
 }
+
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+ /* Parent container for centering */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    padding: 20px; /* Optional padding for spacing */
+    background-color: #f9f9f9; /* Optional background color */
+  }
+  
+  /* Video gallery grid */
+  .video-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 10px;
+    max-width: 1000px;
+    width: 100%; /* Ensures grid is responsive */
+  }
+  
+  /* Styling for videos */
+  video {
+    border-radius: 2px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  video:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  
